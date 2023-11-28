@@ -8,7 +8,6 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<Employee, EmployeeDto>().ReverseMap();
         CreateMap<Permission, PermissionDto>().ReverseMap();
         CreateMap<PermissionType, PermissionTypeDto>().ReverseMap();
     }

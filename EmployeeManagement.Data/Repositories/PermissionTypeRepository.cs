@@ -8,10 +8,10 @@ namespace EmployeeManagement.Data.Repositories;
 
 public class PermissionTypeRepository : IPermissionTypeRepository
 {
-    private readonly EmployeesContext _context;
+    private readonly PermissionsContext _context;
     private readonly IMapper _mapper; 
 
-    public PermissionTypeRepository(EmployeesContext context, IMapper mapper)
+    public PermissionTypeRepository(PermissionsContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;

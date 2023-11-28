@@ -7,7 +7,6 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<Employee, Entities.Employee>().ReverseMap();
         CreateMap<Permission, Entities.Permission>().ReverseMap();
         CreateMap<PermissionType, Entities.PermissionType>().ReverseMap();
     }

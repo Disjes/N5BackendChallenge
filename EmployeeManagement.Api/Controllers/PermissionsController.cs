@@ -22,9 +22,9 @@ public class PermissionsController : ControllerBase
     public async Task<IActionResult> RequestPermission([FromBody] PermissionDto dto)
     {
         var command = new RequestPermissionCommand(
-            dto.PermissionId, 
-            dto.EmployeeName,
-            dto.EmployeeLastName,
+            dto.Id, 
+            dto.EmployeeForename,
+            dto.EmployeeSurname,
             dto.PermissionDate);
 
         var result = await _mediator.Send(command);
@@ -35,7 +35,7 @@ public class PermissionsController : ControllerBase
             return Ok("Permission added successfully.");
         }
         
-        Log.Error($"RequestPermission Error Employee: {command.EmployeeName}, PermissionId: {dto.PermissionId}");
+        Log.Error($"RequestPermission Error Employee: {command.EmployeeName}, PermissionId: {dto.Id}");
         return BadRequest("Failed to add permission.");
     }
     
@@ -68,7 +68,7 @@ public class PermissionsController : ControllerBase
             
         }
         
-        Log.Error($"RequestPermission Error Employee: {modifyPermissionCommand.PermissionDto.EmployeeName}, PermissionId: {permissionId}");
+        Log.Error($"RequestPermission Error Employee: {modifyPermissionCommand.PermissionDto.EmployeeForename}, PermissionId: {permissionId}");
         return BadRequest("Failed to modify permission.");
     }
 }

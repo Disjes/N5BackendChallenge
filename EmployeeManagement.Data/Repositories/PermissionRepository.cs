@@ -8,10 +8,10 @@ namespace EmployeeManagement.Data.Repositories;
 
 public class PermissionRepository : IPermissionRepository
 {
-    private readonly EmployeesContext _context;
+    private readonly PermissionsContext _context;
     private readonly IMapper _mapper; 
 
-    public PermissionRepository(EmployeesContext context, IMapper mapper)
+    public PermissionRepository(PermissionsContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;
@@ -26,7 +26,7 @@ public class PermissionRepository : IPermissionRepository
     public Permission GetPermissionById(int id)
     {
         return _mapper.Map<Permission>(_context.Permission
-            .FirstOrDefault(e => e.PermissionId == id));
+            .FirstOrDefault(e => e.Id == id));
     }
 
     public void AddPermission(Permission permission)

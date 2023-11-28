@@ -4,7 +4,6 @@ namespace EmployeeManagement.Domain.Interfaces.UnitOfWork;
 
 public interface IUnitOfWork
 {
-    IEmployeeRepository Employees { get; }
     IPermissionTypeRepository PermissionTypes { get; }
     IPermissionRepository Permissions { get; }
 

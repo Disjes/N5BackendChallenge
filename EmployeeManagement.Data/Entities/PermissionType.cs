@@ -7,8 +7,8 @@ public class PermissionType
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int PermissionTypeId { get; set; }
-    public string TypeName { get; set; }
+    public int Id { get; set; }
+    public string Description { get; set; }
 
     // Navigation property
     public virtual ICollection<Permission> Permissions { get; set; }

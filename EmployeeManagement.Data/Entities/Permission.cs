@@ -7,17 +7,16 @@ public class Permission
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int PermissionId { get; set; }
+    public int Id { get; set; }
     
-    public string EmployeeName { get; set; }
-    public string EmployeeLastName { get; set; }
+    public string EmployeeForename { get; set; }
+    public string EmployeeSurname { get; set; }
     
-
     [ForeignKey("PermissionType")]
-    public int PermissionTypeId { get; set; }
+    public int PermissionType { get; set; }
 
     public DateTime PermissionDate { get; set; }
 
     // Navigation properties
-    public virtual PermissionType? PermissionType { get; set; }
+    public virtual PermissionType? PermissionTypeNavigation { get; set; }
 }

@@ -17,9 +17,9 @@ public class RequestPermissionHandler : IRequestHandler<RequestPermissionCommand
     {
         var dto = new PermissionDto()
         {
-            EmployeeName = request.EmployeeName,
-            EmployeeLastName = request.EmployeeLastName,
-            PermissionTypeId = request.PermissionTypeId,
+            EmployeeForename = request.EmployeeName,
+            EmployeeSurname = request.EmployeeLastName,
+            PermissionType = request.PermissionTypeId,
             PermissionDate = request.PermissionDate
         };
         var result = await _permissionsService.AddPermissionToUser(dto);

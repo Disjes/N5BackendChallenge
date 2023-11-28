@@ -11,9 +11,8 @@ public static class DataServiceCollectionExtensions
 {
     public static IServiceCollection AddDataServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<EmployeesContext>(options =>
+        services.AddDbContext<PermissionsContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-        services.AddScoped<IEmployeeRepository, EmployeeRepository>();
         services.AddScoped<IPermissionRepository, PermissionRepository>();
         services.AddScoped<IPermissionTypeRepository, PermissionTypeRepository>();
 

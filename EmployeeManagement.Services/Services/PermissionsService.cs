@@ -31,7 +31,7 @@ public class PermissionsService : IPermissionsService
     
     public async Task<PermissionDto> AddPermissionToUser(PermissionDto permissionDto)
     {
-        if (ValidateOperation(permissionDto.PermissionTypeId))
+        if (ValidateOperation(permissionDto.PermissionType))
         {
             var permissionEntity = _mapper.Map<Permission>(permissionDto);
 
